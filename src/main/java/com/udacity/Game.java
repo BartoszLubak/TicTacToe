@@ -148,11 +148,32 @@ public class Game {
      * @param grid 2D array of characters representing the game board
      * @return String indicating the outcome of the game: "X wins" or "O wins" or "Tie" or "None"
      */
-    public String checkGameWinner(char [][]grid){
+    public String checkGameWinner(char [][]grid) {
         String result = "None";
         //Student code goes here ...
+        for (int i = 0; i<3; i++) {
+            for (int j=0; j<3; j++) {
+                if (grid[i][j]!="-") {
+                    if (j == 0) {
+                        if (grid[i][j] == grid[i][j + 1] && grid[i][j+1] == grid[i][j + 2]) {
+                            result = grid[i][j] + " wins";
+                        }
+                    }
+                    if (i == 0) {
+                        if (grid[i][j] == grid[i + 1][j] && grid[i+1][j] == grid[i + 2][j]) {
+                            result = grid[i][j] + " wins";
+                        }
+                    }
+                    if (freeSpots==0) {
+                        result = "TIE";
+                    }
+                }
+            }
+        }
         return result;
     }
+
+
 
     /**
      * Main function
