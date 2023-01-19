@@ -1,7 +1,7 @@
 package com.udacity;
 
 import java.util.Arrays;
-
+import java.util.ArrayList;
 /**
  * Created by udacity 2016
  * The Main class containing game logic and backend 2D array
@@ -151,26 +151,20 @@ public class Game {
     public String checkGameWinner(char [][]grid) {
         String result = "None";
         //Student code goes here ..
-             for (int i = 0; i < 3; i++) {
-                 if (grid[i][0] = "-") {
-                     return result;
-                 } else if (grid[i][0] == grid[i][1]){
-                         result = grid[i][0] + " wins";
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (grid[i][j] == '-') {
+                    return result;
                 }
-             }
-             for (int j = 0; j < 3; j++) {
-                 if (grid[0][j] = "-") {
-                     return result;
-                 } else if((grid[0][j] == grid[1][j]) && (grid[1][j] == grid[2][j]))) {
-                        result = grid[0][j] + " wins";
-                    }
-                }
-
             }
 
-            return result;
         }
+        return result;
     }
+
+
+
+
 
 
 
