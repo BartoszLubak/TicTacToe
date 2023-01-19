@@ -150,14 +150,43 @@ public class Game {
      */
     public String checkGameWinner(char [][]grid) {
         String result = "None";
+
         //Student code goes here ..
+            boolean oWins = ((grid[0][0] == 'x' && grid[0][1] == 'x' && grid[0][2] == 'x') ||
+                    (grid[1][0] == 'x' && grid[1][1] == 'x' && grid[1][2] == 'x') ||
+                    (grid[2][0] == 'x' && grid[2][1] == 'x' && grid[2][2] == 'x') ||
+                    (grid[0][0] == 'x' && grid[1][0] == 'x' && grid[2][0] == 'x') ||
+                    (grid[0][1] == 'x' && grid[1][1] == 'x' && grid[2][1] == 'x') ||
+                    (grid[0][2] == 'x' && grid[1][2] == 'x' && grid[2][2] == 'x') ||
+                    (grid[0][0] == 'x' && grid[1][1] == 'x' && grid[2][2] == 'x') ||
+                    (grid[0][2] == 'x' && grid[1][1] == 'x' && grid[2][0] == 'x'));
+        if(oWins) {
+            result = "X WINS";
+        }
+            boolean yWins = ((grid[0][0] == 'o' && grid[0][1] == 'o' && grid[0][2] == 'o') ||
+                    (grid[1][0] == 'o' && grid[1][1] == 'o' && grid[1][2] == 'o') ||
+                    (grid[2][0] == 'o' && grid[2][1] == 'o' && grid[2][2] == 'o') ||
+                    (grid[0][0] == 'o' && grid[1][0] == 'o' && grid[2][0] == 'o') ||
+                    (grid[0][1] == 'o' && grid[1][1] == 'o' && grid[2][1] == 'o') ||
+                    (grid[0][2] == 'o' && grid[1][2] == 'o' && grid[2][2] == 'o') ||
+                    (grid[0][0] == 'o' && grid[1][1] == 'o' && grid[2][2] == 'o') ||
+                    (grid[0][2] == 'o' && grid[1][1] == 'o' && grid[2][0] == 'o'));
+                    if(yWins){
+                result = "O WINS";
+            }
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (grid[i][j] == '-') {
                     return result;
                 }
             }
-
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (grid[i][j] != '-' & !oWins & !yWins) {
+                    result = "TIE";
+                }
+            }
         }
         return result;
     }
