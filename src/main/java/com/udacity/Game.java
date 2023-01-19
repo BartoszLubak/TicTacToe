@@ -150,27 +150,26 @@ public class Game {
      */
     public String checkGameWinner(char [][]grid) {
         String result = "None";
-        //Student code goes here ...
-        for (int i = 0; i<3; i++) {
-            for (int j=0; j<3; j++) {
-                if (grid[i][j]!="-") {
-                    if (j == 0) {
-                        if (grid[i][j] == grid[i][j + 1] && grid[i][j+1] == grid[i][j + 2]) {
-                            result = grid[i][j] + " wins";
-                        }
-                    }
-                    if (i == 0) {
-                        if (grid[i][j] == grid[i + 1][j] && grid[i+1][j] == grid[i + 2][j]) {
-                            result = grid[i][j] + " wins";
-                        }
-                    }
-                    if (freeSpots==0) {
-                        result = "TIE";
+        //Student code goes here ..
+             for (int i = 0; i < 3; i++) {
+                 if (grid[i][0] = "-") {
+                     return result;
+                 } else if (grid[i][0] == grid[i][1]){
+                         result = grid[i][0] + " wins";
+                }
+             }
+             for (int j = 0; j < 3; j++) {
+                 if (grid[0][j] = "-") {
+                     return result;
+                 } else if((grid[0][j] == grid[1][j]) && (grid[1][j] == grid[2][j]))) {
+                        result = grid[0][j] + " wins";
                     }
                 }
+
             }
+
+            return result;
         }
-        return result;
     }
 
 
